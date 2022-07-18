@@ -245,6 +245,8 @@
           null,
           1,
           1,
+          null,
+          1,
           null
         ]
       },
@@ -254,9 +256,8 @@
           null
         ]
       },
-      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/recipe.rb": {
+      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/ingredient.rb": {
         "lines": [
-          1,
           1,
           1,
           1,
@@ -273,17 +274,6 @@
           null
         ]
       },
-      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/ingredient.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/recipe_ingredient.rb": {
         "lines": [
           1,
@@ -292,27 +282,19 @@
           null
         ]
       },
-      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/controllers/recipes_controller.rb": {
+      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/recipe.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
-          1,
           1,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/controllers/application_controller.rb": {
-        "lines": [
+          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1658168810
+    "timestamp": 1658170093
   }
 }

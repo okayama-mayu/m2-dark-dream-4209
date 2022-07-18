@@ -34,7 +34,7 @@ RSpec.describe 'Ingredients Index' do
         expect(page).to have_content('Pasta: 1')
         expect(page).to have_content('Eggplant: 2')
         expect(page).to have_content('Tomato sauce: 2')
-        expect(page).to have_content('Price rib: 1')
+        expect(page).to have_content('Prime rib: 1')
         expect(page).to have_content('Salt: 3')
     end
 end
