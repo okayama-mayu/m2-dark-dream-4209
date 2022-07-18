@@ -16,4 +16,8 @@ class Recipe < ApplicationRecord
 
         cost 
     end
+
+    def self.sort_alpha
+        Recipe.all.order(:name)
+    end
 end

@@ -43,5 +43,13 @@ RSpec.describe Ingredient, type: :model do
           'Salt' => 3
         })
     end
+
+    it 'sorts igredients in alpha order' do 
+      ingredient1 = Ingredient.create!(name: 'Pasta', cost: 2) #1
+      ingredient2 = Ingredient.create!(name: 'Eggplant', cost: 3) #2
+      ingredient3 = Ingredient.create!(name: 'Tomato sauce', cost: 5) #2
+
+      expect(Ingredient.sort_alpha).to eq([ingredient2, ingredient1, ingredient3])
+    end
   end
 end

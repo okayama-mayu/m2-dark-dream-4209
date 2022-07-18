@@ -30,4 +30,15 @@ RSpec.describe Recipe, type: :model do
       expect(recipe1.total_cost).to eq 14
     end
   end
+
+  describe 'class methods' do 
+    it 'sorts the recipes in alphabetical order by name' do 
+      Recipe.destroy_all
+      recipe1 = Recipe.create!(name: 'Spaghetti', complexity: 2, genre: 'Italian')
+      recipe2 = Recipe.create!(name: 'Steak', complexity: 1, genre: 'American')
+      recipe3 = Recipe.create!(name: 'Ramen', complexity: 4, genre: 'Japanese')
+
+      expect(Recipe.sort_alpha).to eq([recipe3, recipe1, recipe2])
+    end
+  end
 end

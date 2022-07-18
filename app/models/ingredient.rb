@@ -16,4 +16,8 @@ class Ingredient < ApplicationRecord
 
         hash_by_name
     end
+
+    def self.sort_alpha
+        Ingredient.all.order(:name)
+    end
 end

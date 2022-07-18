@@ -38,4 +38,24 @@ RSpec.describe 'Ingredients Index' do
         expect(page).to have_content('Prime rib: 1')
         expect(page).to have_content('Salt: 3')
     end
+
+    it 'lists all ingredients in alphabetical order' do 
+        ingredient1 = Ingredient.create!(name: 'Pasta', cost: 2) #1
+        ingredient2 = Ingredient.create!(name: 'Eggplant', cost: 3) #2
+        ingredient3 = Ingredient.create!(name: 'Tomato sauce', cost: 5) #2
+
+        visit '/ingredients' 
+
+        within "#ingredient-0" do
+            expect(page).to have_content('Eggplant')
+        end
+
+        within "#ingredient-1" do
+            expect(page).to have_content('Pasta')
+        end
+
+        within "#ingredient-2" do
+            expect(page).to have_content('Tomato Sauce')
+        end
+    end
 end

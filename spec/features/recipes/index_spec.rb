@@ -11,6 +11,7 @@ RSpec.describe 'Recipes Index' do
     # (e.g. "Name: Spaghetti, Complexity: 2, Genre: Italian")
 
     it 'has a list of recipes with attributes' do 
+        Recipe.destroy_all
         recipe1 = Recipe.create!(name: 'Spaghetti', complexity: 2, genre: 'Italian')
         recipe2 = Recipe.create!(name: 'Steak', complexity: 1, genre: 'American')
         recipe3 = Recipe.create!(name: 'Ramen', complexity: 4, genre: 'Japanese')
@@ -27,5 +28,26 @@ RSpec.describe 'Recipes Index' do
         expect(page).to have_content 'Ramen' 
         expect(page).to have_content 4
         expect(page).to have_content 'Japanese' 
+    end
+
+    it 'lists recipes alphabetaically' do 
+        Recipe.destroy_all
+        recipe1 = Recipe.create!(name: 'Spaghetti', complexity: 2, genre: 'Italian')
+        recipe2 = Recipe.create!(name: 'Steak', complexity: 1, genre: 'American')
+        recipe3 = Recipe.create!(name: 'Ramen', complexity: 4, genre: 'Japanese')
+
+        visit '/recipes' 
+
+        within "#recipe-0" do
+            expect(page).to have_content('Ramen')
+        end
+
+        within "#recipe-1" do
+            expect(page).to have_content('Spaghetti')
+        end
+
+        within "#recipe-2" do
+            expect(page).to have_content('Steak')
+        end
     end
 end
