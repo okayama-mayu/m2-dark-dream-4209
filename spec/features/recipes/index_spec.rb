@@ -16,6 +16,7 @@ RSpec.describe 'Recipes Index' do
         recipe2 = Recipe.create!(name: 'Ramen', complexity: 4, genre: 'Japanese')
 
         visit '/recipes' 
+        save_and_open_page
 
         expect(page).to have_content 'Spaghetti'
         expect(page).to have_content 2
