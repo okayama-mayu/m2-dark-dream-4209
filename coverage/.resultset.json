@@ -272,10 +272,24 @@
       "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/recipe_ingredient.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mayutakeda/turing/2mod/ics/m2-dark-dream-4209/app/models/recipe.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1658165952
+    "timestamp": 1658166312
   }
 }
