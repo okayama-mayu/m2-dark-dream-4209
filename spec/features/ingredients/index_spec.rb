@@ -1,19 +1,13 @@
-require 'rails_helper'
+require 'rails_helper' 
 
-RSpec.describe Ingredient, type: :model do
-  describe 'validations' do
-    it {should validate_presence_of :name}
-    it {should validate_presence_of :cost}
-  end
-
-  describe 'relationships' do
-    it {should have_many :recipe_ingredients}
-    it {should have_many(:recipes).through(:recipe_ingredients)}
-  end
-
-  describe 'class methods' do 
-    it 'returns a hash of the ingredient as the key and the count as the value' do 
-      recipe1 = Recipe.create!(name: 'Spaghetti', complexity: 2, genre: 'Italian')
+RSpec.describe 'Ingredients Index' do 
+    # User Story 3 of 4
+    # As a visitor,
+    # When I visit '/ingredients'
+    # I see a list of ingredients and the number of recipes each ingredient is used in.
+    # (e.g. "Ground Beef: 2", "Salt: 4")
+    it 'has a list of ingreidents and the number of recipes each ingredient is used in' do 
+        recipe1 = Recipe.create!(name: 'Spaghetti', complexity: 2, genre: 'Italian')
         recipe2 = Recipe.create!(name: 'Steak with Eggplant', complexity: 1, genre: 'American')
         recipe3 = Recipe.create!(name: 'Special Soup', complexity: 4, genre: 'Soup')
 
@@ -35,13 +29,13 @@ RSpec.describe Ingredient, type: :model do
         RecipeIngredient.create!(recipe: recipe3, ingredient: ingredient3)
         RecipeIngredient.create!(recipe: recipe3, ingredient: ingredient5)
 
-        expect(Ingredient.recipes_count).to eq({
-          'Pasta' => 1,  
-          'Eggplant' => 2, 
-          'Tomato sauce' => 2, 
-          'Prime rib' => 1, 
-          'Salt' => 3
-        })
+        visit '/ingredients'
+        # save_and_open_page
+
+        expect(page).to have_content('Pasta: 1')
+        expect(page).to have_content('Eggplant: 2')
+        expect(page).to have_content('Tomato sauce: 2')
+        expect(page).to have_content('Prime rib: 1')
+        expect(page).to have_content('Salt: 3')
     end
-  end
 end
