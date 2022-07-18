@@ -1,8 +1,6 @@
 <h1>Ingredients</h1>
 
-<% @ingredient_count.each_with_index do |ingredient_count, idx| %>
-    <div id="ingredient-<%=idx%>">
-        <%=ingredient_count[0]%>: <%= count[1]%>
-    </div>
+<% @ingredient_count.each do |ingredient_name, count| %>
+    <%=ingredient_name%>: <%= count%>
     <br>
 <% end %>
