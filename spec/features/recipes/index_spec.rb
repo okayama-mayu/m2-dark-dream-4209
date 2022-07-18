@@ -13,7 +13,7 @@ RSpec.describe 'Recipes Index' do
     it 'has a list of recipes with attributes' do 
         recipe1 = Recipe.create!(name: 'Spaghetti', complexity: 2, genre: 'Italian')
         recipe2 = Recipe.create!(name: 'Steak', complexity: 1, genre: 'American')
-        recipe2 = Recipe.create!(name: 'Ramen', complexity: 4, genre: 'Japanese')
+        recipe3 = Recipe.create!(name: 'Ramen', complexity: 4, genre: 'Japanese')
 
         visit '/recipes' 
         save_and_open_page
