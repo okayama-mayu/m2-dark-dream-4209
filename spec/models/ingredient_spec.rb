@@ -40,7 +40,7 @@ RSpec.describe Ingredient, type: :model do
           'Eggplant' => 2, 
           'Tomato sauce' => 2, 
           'Prime rib' => 1, 
-          'Tomato sauce' => 3
+          'Salt' => 3
         })
     end
   end

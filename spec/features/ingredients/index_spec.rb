@@ -30,6 +30,7 @@ RSpec.describe 'Ingredients Index' do
         RecipeIngredient.create!(recipe: recipe3, ingredient: ingredient5)
 
         visit '/ingredients'
+        # save_and_open_page
 
         expect(page).to have_content('Pasta: 1')
         expect(page).to have_content('Eggplant: 2')
